@@ -6,6 +6,7 @@
 //  Copyright © 2017 yogesh singh negi. All rights reserved.
 //
 import Foundation
+import SwiftyJSON
 
 //=============================================================//
 //MARK: NetworkController Class
@@ -20,6 +21,25 @@ class NetworkController {
 //=============================================================//
     
     func get(url:String,userName:String,password:String,completion: @escaping (Person) -> ()) {
+        
+        /* // Cannot use this: No Clue why i cant use below request method of Alamofire with all such parameters
+         
+         let parameters: Parameters = [
+         "foo": "bar",
+         "baz": ["a", 1],
+         "qux": [
+         "x": 1,
+         "y": 2,
+         "z": 3
+         ]
+         ]
+         
+         // All three of these calls are equivalent
+         Alamofire.request("https://httpbin.org/post", method: .post, parameters: parameters)
+         Alamofire.request("https://httpbin.org/post", method: .post, parameters: parameters, encoding: URLEncoding.default)
+         Alamofire.request("https://httpbin.org/post", method: .post, parameters: parameters, encoding: URLEncoding.httpBody)
+
+     */
         
         // Defining Headers
         let headers = [
@@ -44,15 +64,12 @@ class NetworkController {
         let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
             if let err = error {
                 print(err)
-            } else {
+            }
+            else {
                 
-                // Returns a Foundation object from JSON data in a given stream.
-                let json = try! JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.init(rawValue: 0))
-                
-                guard let dict = json as? [String:Any] else { fatalError("dict not memorised") }
-                
-                // Dictionary sent as parameter to Model(Person)
-                self.obPerson = Person(dict: dict)
+                // Data parsed using SwiftyJSON
+                let json = JSON(data!)
+                self.obPerson = Person(json: json)
 
             }
         })

@@ -16,6 +16,7 @@
 		0C92F9371F6BD9F8002EEF65 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C92F9361F6BD9F8002EEF65 /* Person.swift */; };
 		0C92F9391F6BE00C002EEF65 /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C92F9381F6BE00C002EEF65 /* APIController.swift */; };
 		0C92F93B1F6BF041002EEF65 /* LogInSuccessVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C92F93A1F6BF041002EEF65 /* LogInSuccessVC.swift */; };
+		B7CF8A88B429384014FA76F3 /* Pods_MVCJaiHo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D91DCDE33B8102A66F5A876 /* Pods_MVCJaiHo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,9 @@
 		0C92F9361F6BD9F8002EEF65 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		0C92F9381F6BE00C002EEF65 /* APIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
 		0C92F93A1F6BF041002EEF65 /* LogInSuccessVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInSuccessVC.swift; sourceTree = "<group>"; };
+		5D91DCDE33B8102A66F5A876 /* Pods_MVCJaiHo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVCJaiHo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D10C7B5EE051F7F77AB32E5 /* Pods-MVCJaiHo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVCJaiHo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MVCJaiHo/Pods-MVCJaiHo.debug.xcconfig"; sourceTree = "<group>"; };
+		EED2556DEEB4D04CDCE9668D /* Pods-MVCJaiHo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVCJaiHo.release.xcconfig"; path = "Pods/Target Support Files/Pods-MVCJaiHo/Pods-MVCJaiHo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7CF8A88B429384014FA76F3 /* Pods_MVCJaiHo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +53,8 @@
 			children = (
 				0C92F91A1F6BD2E8002EEF65 /* MVCJaiHo */,
 				0C92F9191F6BD2E8002EEF65 /* Products */,
+				5889B282016D0084840038AB /* Pods */,
+				609D5A6759FA80504A54C112 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,6 +107,23 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		5889B282016D0084840038AB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7D10C7B5EE051F7F77AB32E5 /* Pods-MVCJaiHo.debug.xcconfig */,
+				EED2556DEEB4D04CDCE9668D /* Pods-MVCJaiHo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		609D5A6759FA80504A54C112 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5D91DCDE33B8102A66F5A876 /* Pods_MVCJaiHo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -107,9 +131,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0C92F92A1F6BD2E8002EEF65 /* Build configuration list for PBXNativeTarget "MVCJaiHo" */;
 			buildPhases = (
+				B319EFB01B478290903D91C3 /* [CP] Check Pods Manifest.lock */,
 				0C92F9141F6BD2E8002EEF65 /* Sources */,
 				0C92F9151F6BD2E8002EEF65 /* Frameworks */,
 				0C92F9161F6BD2E8002EEF65 /* Resources */,
+				F4B9A83DC80575A354ABD262 /* [CP] Embed Pods Frameworks */,
+				57A6721150501ED1DA187B11 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -166,6 +193,64 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		57A6721150501ED1DA187B11 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MVCJaiHo/Pods-MVCJaiHo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B319EFB01B478290903D91C3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MVCJaiHo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F4B9A83DC80575A354ABD262 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MVCJaiHo/Pods-MVCJaiHo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MVCJaiHo/Pods-MVCJaiHo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0C92F9141F6BD2E8002EEF65 /* Sources */ = {
@@ -312,6 +397,7 @@
 		};
 		0C92F92B1F6BD2E8002EEF65 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D10C7B5EE051F7F77AB32E5 /* Pods-MVCJaiHo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -326,6 +412,7 @@
 		};
 		0C92F92C1F6BD2E8002EEF65 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EED2556DEEB4D04CDCE9668D /* Pods-MVCJaiHo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

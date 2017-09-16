@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 //=============================================================//
 //MARK: Person Class
@@ -21,11 +22,12 @@ class Person {
 //MARK: initializer which populates store properties of Model
 //=============================================================//
     
-    init(dict:[String:Any]) {
+    init(json:JSON) {
         
-        let form = dict["form"] as! [String : Any]
-        self.userName = form["UserName"] as? String
-        self.password = form["Password"] as? String
+        self.userName = json["form"]["UserName"].string!
+        self.password = json["form"]["Password"].string!
+        
     }
+    
     
 }

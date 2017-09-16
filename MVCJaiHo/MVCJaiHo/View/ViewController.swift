@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 //=============================================================//
 //MARK: ViewController Class
@@ -29,17 +30,21 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var passwordTextfield: UITextField!
     
-    @IBOutlet weak var myLoader: UIActivityIndicatorView!
-    
 //=============================================================//
 //MARK: viewDidLoad() method of ViewController
 //=============================================================//
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.stopLoader()
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        // Empting the TextFileds
+        self.passwordTextfield.text = ""
+        self.userNameTextfield.text = ""
     }
     
 //=============================================================//
@@ -87,13 +92,13 @@ class ViewController: UIViewController {
 //=============================================================//
     
     func startLoader() {
-        self.myLoader.startAnimating()
-        self.myLoader.isHidden = false
+        // Calling third party loader to show with the status
+        SVProgressHUD.show(withStatus: "Please Wait...")
     }
     
     func stopLoader() {
-        self.myLoader.stopAnimating()
-        self.myLoader.isHidden = true
+        // Dismissing third party loader
+        SVProgressHUD.dismiss()
     }
 
 }

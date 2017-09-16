@@ -59,28 +59,20 @@
                                     <action selector="submitBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gf8-tf-Bsm"/>
                                 </connections>
                             </button>
-                            <activityIndicatorView opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="4fs-T2-4aG">
-                                <rect key="frame" x="197" y="358" width="20" height="20"/>
-                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="color" cocoaTouchSystemColor="darkTextColor"/>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="5oN-Cg-vhY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5PH-0W-SQp"/>
-                            <constraint firstItem="4fs-T2-4aG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5Qo-QH-86f"/>
                             <constraint firstItem="hnT-1L-e2c" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="C18-81-is3"/>
                             <constraint firstItem="5oN-Cg-vhY" firstAttribute="top" secondItem="wfA-sK-8K4" secondAttribute="bottom" constant="421" id="Kc1-gf-zzj"/>
                             <constraint firstItem="bd1-MC-0TB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Y3f-iK-ccK"/>
                             <constraint firstItem="hnT-1L-e2c" firstAttribute="top" secondItem="wfA-sK-8K4" secondAttribute="bottom" constant="19" id="cti-Mo-2yD"/>
                             <constraint firstItem="bd1-MC-0TB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="iTX-mg-SAv"/>
                             <constraint firstItem="bd1-MC-0TB" firstAttribute="top" secondItem="wfA-sK-8K4" secondAttribute="bottom" constant="159" id="oQc-7s-csh"/>
-                            <constraint firstItem="4fs-T2-4aG" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="rzd-8Y-22X"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="uHr-5K-STr"/>
                     <connections>
-                        <outlet property="myLoader" destination="4fs-T2-4aG" id="kf6-V2-mPx"/>
                         <outlet property="passwordTextfield" destination="i3q-Lf-GMe" id="KQI-g6-rSC"/>
                         <outlet property="userNameTextfield" destination="f6V-uG-Wnh" id="hkF-OW-Ldf"/>
                     </connections>
