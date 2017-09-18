@@ -9,7 +9,7 @@
 import UIKit
 import SVProgressHUD
 
-//=============================================================//
+//=====================/Users/appinventiv/Desktop/TaskGit/MVCJaiHo/MVCJaiHo/MVCJaiHo/View/Base.lproj/Main.storyboard========================================//
 //MARK: ViewController Class
 //=============================================================//
 
@@ -61,15 +61,15 @@ class ViewController: UIViewController {
         
         // Giving some delay because data from url takes some time
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
-            
+        
             // Moving from current VC to LogInSuccessVC
             guard let obLogInSuccessVC = self.storyboard?.instantiateViewController(withIdentifier: "LogInSuccessVC_ID") as? LogInSuccessVC else { fatalError("LogInSuccessVC not initialized") }
             obLogInSuccessVC.obPerson = self.obPerson
             self.navigationController?.pushViewController(obLogInSuccessVC, animated: true)
             
             self.stopLoader()
-        }
         
+        }
     }
     
 //=============================================================//

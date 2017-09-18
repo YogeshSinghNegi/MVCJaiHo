@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 //=============================================================//
 //MARK: APIController Class
@@ -26,14 +27,13 @@ class APIController {
         let url = "https://httpbin.org/post"
         
         // Calling the get() method of NetworkController class with escaping closure
-        obNC.get(url: url, userName: userName, password: password, completion: {(obPerson:Person) -> () in
-            self.obPerson = obPerson
-        })
-        
-        // Calling the closure with some delay: So that data is arrived from the url
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3, execute: {
+        obNC.get(url: url, userName: userName, password: password, completion: {(json:JSON) -> () in
+            self.obPerson = Person(json: json)
+            
+            // Completion Closure called when the value is fetched successfully
             completion(self.obPerson)
         })
+        
     }
     
 }

@@ -7,20 +7,18 @@
 //
 import Foundation
 import SwiftyJSON
-
+import Alamofire
 //=============================================================//
 //MARK: NetworkController Class
 //=============================================================//
 
 class NetworkController {
     
-    var obPerson: Person!
-    
 //=============================================================//
 //MARK: get() method which helps to hit url
 //=============================================================//
     
-    func get(url:String,userName:String,password:String,completion: @escaping (Person) -> ()) {
+    func get(url:String,userName:String,password:String,completion: @escaping (JSON) -> ()) {
         
         /* // Cannot use this: No Clue why i cant use below request method of Alamofire with all such parameters
          
@@ -40,8 +38,25 @@ class NetworkController {
          Alamofire.request("https://httpbin.org/post", method: .post, parameters: parameters, encoding: URLEncoding.httpBody)
 
      */
+//        Alamofire.request(<#T##url: URLConvertible##URLConvertible#>, method: <#T##HTTPMethod#>, parameters: <#T##Parameters?#>, encoding: <#T##ParameterEncoding#>, headers: <#T##HTTPHeaders?#>).responseJSON { (response) in
+//
+//            if let result = response.result {
+//
+//
+//            }
+//        }
+        
+//        Alamofire.request(url: url, method: HTTPMethod.post, parameters: [userName,password], encoding: URLEncoding.default).responseJSON { (response) in
+//
+//        }
+
+        
+//        Alamofire.request(url, method: .post, parameters: [userName,password], encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+//            
+//        }
         
         // Defining Headers
+        
         let headers = [
             "content-type": "application/x-www-form-urlencoded",
             "cache-control": "no-cache",
@@ -69,17 +84,13 @@ class NetworkController {
                 
                 // Data parsed using SwiftyJSON
                 let json = JSON(data!)
-                self.obPerson = Person(json: json)
-
+                
+                // Completion Closure called when the value is fetched successfully
+                completion(json)
             }
         })
         
         dataTask.resume()
-        
-        // Closure is executed after some delay
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3, execute: {
-            completion(self.obPerson)
-        })
         
     }
 
