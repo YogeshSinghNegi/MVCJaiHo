@@ -9,7 +9,7 @@
 import UIKit
 import SVProgressHUD
 
-//=====================/Users/appinventiv/Desktop/TaskGit/MVCJaiHo/MVCJaiHo/MVCJaiHo/View/Base.lproj/Main.storyboard========================================//
+//=============================================================//
 //MARK: ViewController Class
 //=============================================================//
 
@@ -37,7 +37,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.stopLoader()
-        // Do any additional setup after loading the view, typically from a nib.
+        self.navigationItem.title = "Welcome"
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -81,8 +81,11 @@ class ViewController: UIViewController {
         // Instantiating APIController to call its method
         let obAPI = APIController()
         
-        // calling logInWith() method with escaping closure
-        obAPI.logInWith(userName: self.userNameTextfield.text!,password: self.passwordTextfield.text!, completion: {(obPerson:Person) -> () in
+        // dataDictionary holds the data entered by the user
+        let dataDictionary = ["userName":self.userNameTextfield.text!,"password": self.passwordTextfield.text!]
+        
+        // Calling logInWith() method with escaping closure
+        obAPI.logInWith(dataDictionary: dataDictionary, completion: {(obPerson:Person) -> () in
             self.obPerson = obPerson
         })
     }

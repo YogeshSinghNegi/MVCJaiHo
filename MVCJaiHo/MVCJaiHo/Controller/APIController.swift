@@ -21,13 +21,13 @@ class APIController {
 //MARK: logInWith() method uses the login URL
 //=============================================================//
     
-    func logInWith(userName:String,password:String,completion: @escaping (Person) -> ()) {
+    func logInWith(dataDictionary:[String:String],completion: @escaping (Person) -> ()) {
         
         let obNC = NetworkController()
         let url = "https://httpbin.org/post"
         
         // Calling the get() method of NetworkController class with escaping closure
-        obNC.get(url: url, userName: userName, password: password, completion: {(json:JSON) -> () in
+        obNC.get(url: url,dataDictionary: dataDictionary, completion: {(json:JSON) -> () in
             self.obPerson = Person(json: json)
             
             // Completion Closure called when the value is fetched successfully

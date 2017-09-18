@@ -24,8 +24,8 @@ class Person {
     
     init(json:JSON) {
         
-        self.userName = json["form"]["UserName"].string!
-        self.password = json["form"]["Password"].string!
+        self.userName = json["json"]["userName"].string ?? "Error"
+        self.password = json["json"]["password"].string ?? "Error"
         
     }
     

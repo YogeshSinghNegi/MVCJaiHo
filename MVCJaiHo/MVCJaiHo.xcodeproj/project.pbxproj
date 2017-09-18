@@ -93,8 +93,8 @@
 		0C92F9341F6BD975002EEF65 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				0C92F9321F6BD96B002EEF65 /* NetworkController.swift */,
 				0C92F9381F6BE00C002EEF65 /* APIController.swift */,
+				0C92F9321F6BD96B002EEF65 /* NetworkController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
