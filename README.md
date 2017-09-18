@@ -1,2 +1,3 @@
--# MVCJaiHo
- -Follow MVC patter and Hit URL without using Alamofire and SwiftyJSON
+# MVCJaiHo
+
+ Follow MVC patter and Hit URL using Alamofire and SwiftyJSON
